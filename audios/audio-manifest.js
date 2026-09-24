@@ -1,0 +1,7 @@
+window.__AUDIO_NARRATION__ = {
+  "version": 1,
+  "generatedAt": "2026-09-22T16:30:00.000Z",
+  "source": "question-screen-data.js",
+  "audioDir": "audios",
+  "slides": []
+};
