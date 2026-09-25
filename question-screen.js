@@ -317,6 +317,21 @@
   function contentBlocks(data) {
     var html = '';
     if (data.body) html += `<p class="qs-body">${esc(data.body)}</p>`;
+    if (Array.isArray(data.images) && data.images.length) {
+      html += `<div class="qs-gallery">${data.images.map(function (img) {
+        var src = typeof img === 'string' ? img : (img.image || img.src || '');
+        var alt = typeof img === 'string' ? '' : (img.imageAlt || img.alt || img.caption || '');
+        var cap = typeof img === 'string' ? '' : (img.caption || '');
+        if (!src) return '';
+        return `<figure class="qs-gallery-item">
+          <button type="button" class="qs-zoom-hit" data-qs-zoom="${esc(src)}" data-qs-zoom-alt="${esc(alt)}" aria-label="Ampliar imagem">
+            <img class="qs-img qs-img-contain" src="${esc(src)}" alt="${esc(alt)}" loading="eager" decoding="async">
+            <span class="qs-zoom-fab" aria-hidden="true">${zoomIcon()}</span>
+          </button>
+          ${cap ? `<figcaption>${esc(cap)}</figcaption>` : ''}
+        </figure>`;
+      }).join('')}</div>`;
+    }
     if (Array.isArray(data.stats) && data.stats.length) {
       html += `<div class="qs-stats">${data.stats.map(function (s) {
         return `<div class="qs-stat">
@@ -555,14 +570,26 @@
       : '';
 
     // `wide`: prancha panorâmica, que precisa aparecer inteira em vez de preencher
+    var media = mediaHTML(data, { contain: true, zoom: !data.sensitive });
+    if (data.sensitive) {
+      media = `<div class="qs-sensitive" data-qs-sensitive>
+        <div class="qs-sensitive-media">${media}</div>
+        <div class="qs-sensitive-veil">
+          <span class="qs-sensitive-pill">Aviso</span>
+          <strong>Imagens fortes</strong>
+          <p>Esta foto mostra lesões reais. Só revele se quiser ver.</p>
+          <button type="button" class="qs-sensitive-btn" data-qs-reveal-img>Revelar</button>
+        </div>
+      </div>`;
+    }
     return `
-      <article class="qs-screen is-content is-figure${data.wide ? ' is-wide' : ''}${chips ? ' has-chips' : ''}" data-qs-root data-type="content">
+      <article class="qs-screen is-content is-figure${data.wide ? ' is-wide' : ''}${chips ? ' has-chips' : ''}${data.sensitive ? ' is-sensitive' : ''}" data-qs-root data-type="content">
         <header class="qs-figure-head">
           <h2 class="qs-title">${esc(data.title || '')}</h2>
           ${data.body ? `<p class="qs-body">${esc(data.body)}</p>` : ''}
         </header>
         <div class="qs-figure-media">
-          ${mediaHTML(data, { contain: true })}
+          ${media}
         </div>
         ${chips}
         ${data.quote ? `<blockquote class="qs-quote qs-figure-quote">${esc(data.quote)}</blockquote>` : ''}
@@ -643,9 +670,11 @@
         </div>
       </article>`;
     }
-    var dense = (data.items && data.items.length > 6) || (data.cards && data.cards.length > 3);
+    var dense = (data.items && data.items.length > 6) || (data.cards && data.cards.length > 3) || (data.images && data.images.length > 1);
+    var hasGallery = !!(data.images && data.images.length);
+    var fit = !!data.fit;
     return `
-      <article class="qs-screen is-content is-text${dense ? ' is-dense' : ''}" data-qs-root data-type="content">
+      <article class="qs-screen is-content is-text${dense ? ' is-dense' : ''}${hasGallery ? ' is-gallery' : ''}${fit ? ' is-fit' : ''}" data-qs-root data-type="content">
         <div class="qs-panel qs-panel-text">
           ${head}
         </div>
@@ -706,6 +735,32 @@
     for (var i = a.length - 1; i > 0; i--) {
       var j = Math.floor(Math.random() * (i + 1));
       var t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+
+  function shuffleMixedBins(arr) {
+    var a = shuffle(arr);
+    var i, j, t, guard;
+    function hasTriple() {
+      for (i = 0; i < a.length - 2; i++) {
+        if (a[i] && a[i + 1] && a[i + 2] && a[i].bin === a[i + 1].bin && a[i].bin === a[i + 2].bin) return i;
+      }
+      return -1;
+    }
+    for (guard = 0; guard < 50; guard++) {
+      var at = hasTriple();
+      if (at < 0) break;
+      var swapped = false;
+      for (j = 0; j < a.length; j++) {
+        if (Math.abs(j - (at + 2)) < 1) continue;
+        if (a[j] && a[j].bin !== a[at].bin) {
+          t = a[at + 2]; a[at + 2] = a[j]; a[j] = t;
+          swapped = true;
+          break;
+        }
+      }
+      if (!swapped) a = shuffle(arr);
     }
     return a;
   }
@@ -772,8 +827,7 @@
       </button>`;
     }).join('');
     return `
-      <article class="qs-screen is-content is-text is-order is-timed" data-qs-root data-type="order">
-        <div class="qs-qbar-wrap"><div class="qs-qbar"><i data-qs-timer></i></div></div>
+      <article class="qs-screen is-content is-text is-order" data-qs-root data-type="order">
         <div class="qs-panel qs-panel-text">
           <h2 class="qs-title">${esc(data.title || 'Ordene a rotina')}</h2>
           <p class="qs-body">${esc(data.body || 'Toque nos cuidados na ordem que você seguiria.')}</p>
@@ -786,6 +840,8 @@
 
   function matchHTML(data) {
     var pairs = Array.isArray(data.pairs) ? data.pairs : [];
+    var leftTitle = data.leftTitle || data.exTitle || 'Conceito';
+    var rightTitle = data.rightTitle || data.bodyTitle || 'Significado';
     return `
       <article class="qs-screen is-content is-text is-match is-dense" data-qs-root data-type="match">
         <div class="qs-panel qs-panel-text">
@@ -796,11 +852,11 @@
           </div>
           <div class="qs-match">
             <div class="qs-match-side is-ex">
-              <div class="qs-match-col-title">Exercício</div>
+              <div class="qs-match-col-title">${esc(leftTitle)}</div>
               <div data-qs-match-ex></div>
             </div>
             <div class="qs-match-side is-body">
-              <div class="qs-match-col-title">Região do corpo</div>
+              <div class="qs-match-col-title">${esc(rightTitle)}</div>
               <div data-qs-match-body></div>
             </div>
           </div>
@@ -870,9 +926,13 @@
     var title = data.title || (passed ? 'Desafio concluído!' : 'Desafio não concluído');
     var unlock = data.titleUnlock || null;
     var hasTitle = !!(passed && unlock && unlock.title);
-    var desc = data.body || (passed
-      ? ('Você acertou <strong>' + hits + '</strong> de <strong>' + total + '</strong> questões.')
-      : ('Você acertou <strong>' + hits + '</strong> de <strong>' + total + '</strong>. É necessário acertar pelo menos <strong>' + min + '</strong>. Estude e tente novamente.'));
+    var desc = data.body || (data.mode === 'order'
+      ? (passed
+        ? 'Você montou o fluxo na ordem certa.'
+        : 'Toque os 4 passos na ordem: aviso, gestor, SESMT e Moki.')
+      : (passed
+        ? ('Você acertou <strong>' + hits + '</strong> de <strong>' + total + '</strong> questões.')
+        : ('Você acertou <strong>' + hits + '</strong> de <strong>' + total + '</strong>. É necessário acertar pelo menos <strong>' + min + '</strong>. Estude e tente novamente.')));
     var actions = passed
       ? `<button type="button" class="qs-quiz-intro-btn" data-qs-finish>Continuar</button>`
       : `<button type="button" class="qs-quiz-intro-btn" data-qs-retry>Jogar novamente</button>`;
@@ -889,7 +949,13 @@
           </ul>
         </section>`
       : '';
-    var scoreBar = `<div class="qs-result-scorebar" aria-label="Placar">
+    var scoreBar = data.mode === 'order'
+      ? `<div class="qs-result-scorebar" aria-label="Placar">
+        <span><b>${points}</b> pts</span>
+        <span class="qs-result-scorebar-dot" aria-hidden="true"></span>
+        <span>${passed ? 'Fluxo na ordem certa' : 'Ordem ainda incompleta'}</span>
+      </div>`
+      : `<div class="qs-result-scorebar" aria-label="Placar">
         <span><b>${points}</b> pts</span>
         <span class="qs-result-scorebar-dot" aria-hidden="true"></span>
         <span><b>${hits}/${total}</b> acertos</span>
@@ -1092,9 +1158,10 @@
     if (type === 'content' && this.data && this.data.links) this._bindHazard();
     if (type === 'content' && this.data && this.data.spots) this._bindExplore();
     if (type === 'content' && this.data && this.data.stack) this._bindStack();
+    if (type === 'content' && this.data && this.data.sensitive) this._bindSensitive();
     this._bindZoom();
 
-    if ((type === 'question' || type === 'order' || type === 'sort') && this.options.quizScoring) {
+    if ((type === 'question' || type === 'sort') && this.options.quizScoring) {
       if (this.root) this.root.classList.add('is-timed');
       this._startTimer();
     }
@@ -1149,6 +1216,17 @@
     if (this._videoUnlocked) return;
     this._videoUnlocked = true;
     this._complete({ kind: 'video' });
+  };
+
+  QuestionScreen.prototype._bindSensitive = function () {
+    var box = this.el.querySelector('[data-qs-sensitive]');
+    var btn = this.el.querySelector('[data-qs-reveal-img]');
+    if (!box || !btn) return;
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      box.classList.add('is-open');
+    });
   };
 
   QuestionScreen.prototype._bindZoom = function () {
@@ -1678,6 +1756,7 @@
   QuestionScreen.prototype._finishOrder = function (timedOut) {
     if (this.state.answered) return;
     this._stopTimer();
+    var self = this;
     var items = this.data.items || [];
     var expected = items.slice().sort(function (a, b) { return a.rank - b.rank; }).map(function (it) { return it.key; });
     var tapped = this._seqTapped || [];
@@ -1695,21 +1774,44 @@
     if (fb) {
       fb.hidden = false;
       fb.className = 'qs-seq-fb ' + (correct ? 'is-ok' : 'is-nok');
-      var orderTxt = items.slice().sort(function (a, b) { return a.rank - b.rank; }).map(function (it, i) {
-        return (i + 1) + '. ' + it.text;
-      }).join(' · ');
-      fb.textContent = (timedOut ? 'Tempo esgotado. ' : '') + (correct ? 'Ordem certa! ' : 'Essa não é a ordem mais lógica. ') + orderTxt;
+      fb.textContent = timedOut
+        ? 'Tempo esgotado. Tente de novo.'
+        : (correct ? 'Isso! Essa é a ordem do fluxo.' : 'Ainda não é essa a ordem. Tente de novo.');
+    }
+    beep(correct ? 'ok' : 'nok');
+    if (!correct && !timedOut) {
+      setTimeout(function () {
+        if (self.state.answered) return;
+        self._seqTapped = [];
+        self.el.querySelectorAll('[data-qs-seq]').forEach(function (c) {
+          c.classList.remove('is-picked');
+          c.style.pointerEvents = '';
+          var badge = c.querySelector('.qs-seq-badge');
+          if (badge) badge.textContent = '';
+        });
+        var prog = self.el.querySelector('[data-qs-seq-progress]');
+        if (prog) prog.textContent = '0 de ' + items.length + ' selecionados';
+        if (fb) fb.hidden = true;
+      }, 1400);
+      return;
     }
     var pts = this.options.quizScoring ? this._quizPoints(correct) : 0;
-    beep(correct ? 'ok' : 'nok');
-    this._complete({ kind: 'order', correct: correct, points: pts, timedOut: !!timedOut });
+    this._complete({
+      kind: 'order',
+      correct: correct,
+      points: pts,
+      timedOut: !!timedOut,
+      total: 1,
+      hits: correct ? 1 : 0
+    });
   };
 
   QuestionScreen.prototype._bindMatch = function () {
     var self = this;
     var pairs = this.data.pairs || [];
-    var exOrder = pairs.map(function (_, i) { return i; });
-    var bodyOrder = shuffle(exOrder);
+    var ids = pairs.map(function (_, i) { return i; });
+    var exOrder = shuffle(ids.slice());
+    var bodyOrder = shuffle(ids.slice());
     var matched = {};
     var matchedCount = 0;
     var selectedEx = null;
@@ -1774,7 +1876,14 @@
           var max = self.options.maxPoints != null ? Number(self.options.maxPoints) : 50;
           var pts = max;
           beep('end');
-          self._complete({ kind: 'match', correct: true, points: pts, elapsed: elapsed });
+          self._complete({
+            kind: 'match',
+            correct: true,
+            points: pts,
+            elapsed: elapsed,
+            total: pairs.length,
+            hits: pairs.length
+          });
         }
       } else {
         beep('nok');
@@ -1794,7 +1903,7 @@
 
   QuestionScreen.prototype._bindSort = function () {
     var self = this;
-    var deck = shuffle((this.data.items || []).slice());
+    var deck = shuffleMixedBins((this.data.items || []).slice());
     var index = 0;
     var moving = false;
     var hits = 0;

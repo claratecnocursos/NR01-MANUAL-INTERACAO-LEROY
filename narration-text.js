@@ -118,6 +118,10 @@
     list(screen.stack).forEach(function (s) {
       parts.push(sentence(s.caption || s.imageAlt));
     });
+    list(screen.images).forEach(function (img) {
+      if (typeof img === 'string') return;
+      parts.push(sentence(img.caption || img.imageAlt || img.alt));
+    });
     list(screen.items).forEach(function (it) {
       parts.push(labelled(it.title, it.text || it.body));
     });

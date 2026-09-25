@@ -30,6 +30,7 @@ window.QUESTION_SCREEN_SESSION = {
         {
           id: "m1-lema",
           type: "content",
+          fit: true,
           kicker: "📄 Cultura",
           title: "Pessoas Primeiro e Segurança Primeiro",
           body: "O lema institucional guia cada decisão no chão da loja e do depósito: Human First, Safety First.",
@@ -186,7 +187,7 @@ window.QUESTION_SCREEN_SESSION = {
           type: "cover",
           title: "Módulo 2 — Gestão de Ocorrências, Emergências, Incêndios e Saúde Ocupacional",
           subtitle: "Classificar e comunicar acidentes imediatamente, agir em incêndio e evacuação, e usar os programas do SESMT, PCMSO e Viva Bem.",
-          image: "assets/fotos/m2-p1.png",
+          image: "assets/fotos/capa-modulo2.png",
           transcript: "Módulo 2: ocorrências, emergências, incêndios e saúde ocupacional."
         },
         {
@@ -269,67 +270,27 @@ window.QUESTION_SCREEN_SESSION = {
         {
           id: "m2-desafio",
           type: "quiz-intro",
-          title: "Desafio NR-01 — Módulo 2",
-          count: 4,
-          minCorrect: 3,
-          icon: "🚨",
-          transcript: "Desafio final do módulo 2: 4 perguntas."
+          title: "Missão: Monte o fluxo",
+          count: 1,
+          minCorrect: 1,
+          icon: "📣",
+          body: "Toque os <strong>4 passos</strong> na ordem certa: do aviso até o registro no Moki. Se errar, pode tentar de novo.",
+          transcript: "Missão monte o fluxo. Toque os quatro passos na ordem certa. Se errar, pode tentar de novo."
         },
         {
-          id: "m2-p1",
-          type: "question",
-          question: "Qual é a ordem correta do fluxo de comunicação de acidente?",
-          alternatives: [
-            { id: "a", text: "SESMT → colaborador → cliente", correct: false },
-            { id: "b", text: "Colaborador acidentado → gestor imediato → diretor / SESMT → registro no Moki", correct: true },
-            { id: "c", text: "Só registrar no Moki no dia seguinte", correct: false },
-            { id: "d", text: "Avisar apenas o colega mais próximo", correct: false }
+          id: "m2-jogo",
+          type: "order",
+          title: "Monte o fluxo do acidente",
+          body: "Toque na ordem: quem avisa, quem assume, quem classifica e onde registra.",
+          minCorrect: 1,
+          review: "O fluxo oficial: colaborador, gestor, diretor ou SESMT, e registro no Moki",
+          items: [
+            { key: "aviso", rank: 1, text: "O colaborador acidentado avisa na hora" },
+            { key: "gestor", rank: 2, text: "O gestor imediato assume o chamado" },
+            { key: "sesmt", rank: 3, text: "O diretor ou o SESMT classifica a ocorrência" },
+            { key: "moki", rank: 4, text: "A ocorrência é registrada no Moki" }
           ],
-          explanation: "O fluxo é imediato: colaborador, gestor imediato (gerente de plantão), diretor ou SESMT, com registro obrigatório no Moki.",
-          review: "O fluxo oficial de comunicação de acidente",
-          transcript: "Pergunta 1 do módulo 2."
-        },
-        {
-          id: "m2-p2",
-          type: "question",
-          question: "O que significa ASA e ACA?",
-          alternatives: [
-            { id: "a", text: "ASA é com afastamento; ACA é sem afastamento", correct: false },
-            { id: "b", text: "ASA é acidente sem afastamento; ACA é acidente com afastamento", correct: true },
-            { id: "c", text: "Os dois significam incidente sem lesão", correct: false },
-            { id: "d", text: "ASA é trajeto; ACA é material", correct: false }
-          ],
-          explanation: "ASA: acidente sem afastamento. ACA: acidente com afastamento.",
-          review: "A classificação ASA e ACA",
-          transcript: "Pergunta 2 do módulo 2."
-        },
-        {
-          id: "m2-p3",
-          type: "question",
-          question: "Em uma evacuação, o que você deve fazer?",
-          alternatives: [
-            { id: "a", text: "Correr de volta para pegar pertences", correct: false },
-            { id: "b", text: "Seguir a brigada, caminhar com calma e ir ao ponto de encontro", correct: true },
-            { id: "c", text: "Esperar no corredor até o fogo acabar", correct: false },
-            { id: "d", text: "Obstruir a porta corta-fogo para o vento não entrar", correct: false }
-          ],
-          explanation: "Conheça saídas e brigadistas, siga as instruções da brigada e caminhe com calma até o ponto de encontro. Nunca obstrua equipamentos nem saídas.",
-          review: "O protocolo de evacuação",
-          transcript: "Pergunta 3 do módulo 2."
-        },
-        {
-          id: "m2-p4",
-          type: "question",
-          question: "O que é o programa Viva Bem (Auster)?",
-          alternatives: [
-            { id: "a", text: "Um curso só de combate a incêndio", correct: false },
-            { id: "b", text: "Suporte 24 horas, gratuito e confidencial, pelo 0800 770 2324", correct: true },
-            { id: "c", text: "Um exame demissional obrigatório", correct: false },
-            { id: "d", text: "O sistema Moki de registro de acidente", correct: false }
-          ],
-          explanation: "O Viva Bem oferece apoio 24/7, gratuito e confidencial, em psicologia, jurídico, financeiro, nutrição e outros.",
-          review: "O programa Viva Bem",
-          transcript: "Pergunta 4 — fim do módulo 2."
+          transcript: "Jogo. Toque os quatro passos na ordem do fluxo."
         }
       ]
     },
@@ -348,133 +309,110 @@ window.QUESTION_SCREEN_SESSION = {
           type: "cover",
           title: "Módulo 3 — EPIs, Ferramentas Manuais e Práticas Seguras",
           subtitle: "Usar, ajustar e conservar cada EPI, padronizar o estilete homologado e aplicar as HQs educativas.",
-          image: "assets/fotos/capa-modulo1.png",
+          image: "assets/fotos/capa-modulo3.png",
           transcript: "Módulo 3: EPIs, ferramentas manuais e práticas seguras em loja e depósito."
         },
         {
-          id: "m3-resp",
-          type: "content",
-          kicker: "📄 Responsabilidades",
-          title: "Sua parte com o EPI",
-          body: "O equipamento só protege se estiver inteiro, limpo e no corpo certo.",
-          cards: [
-            { icon: "✅", title: "Usar", body: "Colocar o EPI adequado à tarefa, do começo ao fim." },
-            { icon: "📦", title: "Guardar e conservar", body: "Aguardar no local certo, sem amassar nem molhar." },
-            { icon: "🧼", title: "Higienizar", body: "Limpar conforme a orientação do fabricante e da liderança." },
-            { icon: "📣", title: "Comunicar defeito", body: "Rachou, rasgou ou perdeu ajuste? Avise a liderança e troque." }
-          ],
-          quote: "EPI defeituoso na cabeça é tão perigoso quanto trabalhar sem ele.",
-          transcript: "Responsabilidades: usar, guardar, conservar, higienizar e comunicar defeitos do EPI."
+          id: "m3-v-epis",
+          type: "video",
+          kicker: "🎥 Vídeo",
+          title: "Responsabilidades com EPIs, Calçado, Luvas e Proteção para Cabeça",
+          playerId: "panda-13ca701d-4e1f-458c-9b92-fe4693d341d5",
+          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=13ca701d-4e1f-458c-9b92-fe4693d341d5",
+          transcript: "Vídeo. Responsabilidades com E P Is, calçado, luvas e proteção para cabeça. Assista ao vídeo. Avance quando concluir."
         },
         {
-          id: "m3-epis",
-          type: "content",
-          kicker: "📄 Guia técnico",
-          title: "Os EPIs da operação",
-          body: "Cada área pede um conjunto. Não improvise.",
-          cards: [
-            { icon: "👢", title: "Calçado de segurança", body: "Obrigatório em todas as áreas operacionais." },
-            { icon: "🪖", title: "Capacete", body: "Aéreo, obras e logística. Ajuste da carneira e da cinta jugular. Cores: Manutenção, Brigada, Liderança e Visitante." },
-            { icon: "🧤", title: "Luvas", body: "Obrigatórias na logística, movimentação de cargas, aéreo e plataformas." },
-            { icon: "🪢", title: "Cinto tipo paraquedista", body: "Com talabarte duplo e absorvedor em trabalho em altura e plataforma elevatória." }
-          ],
-          quote: "Também entram máscara, protetor facial ou óculos e protetor auricular, conforme o risco.",
-          transcript: "EPIs: calçado, capacete com carneira e jugular, luvas e cinto paraquedista."
+          id: "m3-v-altura",
+          type: "video",
+          kicker: "🎥 Vídeo",
+          title: "Proteção para Trabalho em Altura, Vapores, Partículas e Ruídos",
+          playerId: "panda-777efdc2-6c10-4ee9-b3f8-76aaa0efcdd4",
+          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=777efdc2-6c10-4ee9-b3f8-76aaa0efcdd4",
+          transcript: "Vídeo. Proteção para trabalho em altura, vapores, partículas e ruídos. Assista ao vídeo. Avance quando concluir."
         },
         {
           id: "m3-estilete",
           type: "content",
-          kicker: "📄 Ferramenta",
-          title: "Só o estilete homologado Leroy Merlin",
-          body: "Lâmina retrátil de segurança. Qualquer outro modelo está proibido.",
+          layout: "figure",
+          wide: true,
+          kicker: "📄 Uso do Estilete",
+          title: "Uso do Estilete",
+          body: "Esta ferramenta não é um EPI, porém você é o responsável pela conservação e pelo uso adequado.",
+          image: "assets/fotos/correto-estilete.png",
+          imageAlt: "Três formas de usar o estilete: corte contra a mão, ferramenta inadequada e o jeito certo com luva e corte para fora",
           cards: [
-            { icon: "✅", title: "Homologado", body: "Estilete da empresa, com lâmina retrátil." },
-            { icon: "🚫", title: "Proibido", body: "Estilete de mercado, gilete ou lâmina solta." },
-            { icon: "🧤", title: "Luvas no corte", body: "Obrigatórias ao cortar fitilhos e embalagens." },
-            { icon: "✋", title: "Por quê", body: "Lesões reais em mãos e dedos nasceram de ferramenta errada." }
+            { icon: "✕", title: "Errado", body: "Nunca corte em direção à mão ou ao corpo." },
+            { icon: "✕", title: "Errado", body: "Não use lâmina solta nem estilete fora do padrão." },
+            { icon: "✓", title: "Correto", body: "Luva no apoio, corte para fora, estilete homologado." }
           ],
-          quote: "Estilete não homologado não entra na operação.",
-          transcript: "Uso exclusivo do estilete homologado Leroy Merlin, com luvas no corte."
+          quote: "Conservar e usar o estilete do jeito certo é responsabilidade de cada um.",
+          transcript: "Uso do estilete. Esta ferramenta não é um E P I, porém você é o responsável pela conservação e pelo uso adequado. Nunca corte em direção à mão. Não use lâmina solta. O correto é luva no apoio, corte para fora e estilete homologado."
+        },
+        {
+          id: "m3-lesoes",
+          type: "content",
+          layout: "figure",
+          wide: true,
+          sensitive: true,
+          kicker: "📄 Casos reais",
+          title: "Casos reais de cortes",
+          body: "Falta de EPI e estilete fora do padrão causaram lesões graves em mãos e dedos. A foto a seguir é forte e só aparece se você escolher revelar.",
+          image: "assets/fotos/imagens-fortes.png",
+          imageAlt: "Fotografias reais de cortes e lesões em mãos e dedos",
+          quote: "Estilete homologado e luva no corte existem para que isso não aconteça.",
+          transcript: "Casos reais de cortes. Falta de E P I e estilete fora do padrão causaram lesões graves em mãos e dedos. A foto é forte e só aparece se você escolher revelar."
+        },
+        {
+          id: "m3-v-estilete",
+          type: "video",
+          kicker: "🎥 Vídeo",
+          title: "Segurança no Manuseio e Uso do Estilete Homologado",
+          playerId: "panda-fc95b229-b6d9-4204-926b-8a83b350fa45",
+          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=fc95b229-b6d9-4204-926b-8a83b350fa45",
+          transcript: "Vídeo. Segurança no manuseio e uso do estilete homologado. Assista ao vídeo. Avance quando concluir."
         },
         {
           id: "m3-hqs",
           type: "content",
           kicker: "📄 HQs educativas",
-          title: "Três histórias, três regras de ouro",
-          body: "As HQs mostram o jeito certo — e o tombo que o jeito errado causa.",
-          cards: [
-            { icon: "1", title: "Chapas e painéis", body: "Proibido empilhar MDF na vertical. Horizontal evita tombamento. Prevenção é a chave. Acidente zero." },
-            { icon: "2", title: "Aéreo e plataforma", body: "Compartimento blindado das correntes, manutenção em dia e acionamento da brigada se precisar." },
-            { icon: "3", title: "Manuseio e ferramentas", body: "Cuidado com pontos de prensamento, como no cortador de grama. Luvas e primeiros socorros." },
-            { icon: "📖", title: "Como usar a HQ", body: "Leia, compare com a sua área e corrija o desvio no mesmo dia." }
+          title: "Exemplos de ocorrência",
+          body: "Pratique a segurança em todos os momentos!",
+          images: [
+            { image: "assets/fotos/hq1.png", caption: "HQ 1 — Armazenamento de chapas e painéis.", imageAlt: "HQ 1: armazenamento de chapas e painéis" },
+            { image: "assets/fotos/hq2.png", caption: "HQ 2 — Abastecimento no aéreo e plataforma elevatória.", imageAlt: "HQ 2: aéreo e plataforma elevatória" }
           ],
           quote: "Prevenção é a chave. Acidente zero.",
-          transcript: "HQs: armazenamento de chapas, aéreo e plataforma, manuseio e ferramentas."
+          transcript: "Exemplos de ocorrência. Pratique a segurança em todos os momentos."
         },
         {
           id: "m3-desafio",
           type: "quiz-intro",
-          title: "Desafio NR-01 — Módulo 3",
-          count: 4,
-          minCorrect: 3,
-          icon: "👷",
-          transcript: "Desafio final do módulo 3: 4 perguntas."
+          title: "Missão: Seguro ou Inseguro?",
+          count: 6,
+          minCorrect: 4,
+          icon: "🛡️",
+          body: "São <strong>6 cenas</strong> da loja e do depósito. Classifique cada uma como <strong>Seguro</strong> ou <strong>Inseguro</strong>. Acerte no mínimo <strong>4</strong> para avançar.",
+          transcript: "Missão seguro ou inseguro. São seis cenas. Classifique cada uma. Acerte no mínimo quatro para avançar."
         },
         {
-          id: "m3-p1",
-          type: "question",
-          question: "O que o colaborador deve fazer com o EPI?",
-          alternatives: [
-            { id: "a", text: "Usar só quando a fiscalização aparecer", correct: false },
-            { id: "b", text: "Usar, guardar, conservar, higienizar e comunicar defeitos à liderança", correct: true },
-            { id: "c", text: "Emprestar o capacete sem ajustar a carneira", correct: false },
-            { id: "d", text: "Guardar o cinto molhado no chão", correct: false }
+          id: "m3-jogo",
+          type: "sort",
+          title: "Seguro ou inseguro?",
+          body: "Toque no lado certo. Pense rápido — é o dia a dia da operação.",
+          left: { id: "nok", label: "Inseguro", icon: "✕" },
+          right: { id: "ok", label: "Seguro", icon: "✓" },
+          minCorrect: 4,
+          time: 50,
+          review: "EPIs, estilete homologado e práticas em loja e depósito",
+          items: [
+            { text: "Cortar fitilho com o estilete homologado e luva no apoio, sempre para fora do corpo.", bin: "ok", hint: "Esse é o jeito certo: ferramenta da empresa, luva e corte para fora." },
+            { text: "Subir na plataforma elevatória com o capacete solto, sem ajustar a carneira e a cinta jugular.", bin: "nok", hint: "Sem carneira e jugular o capacete não protege." },
+            { text: "Usar calçado de segurança em toda a área operacional, do começo ao fim do turno.", bin: "ok", hint: "Calçado de segurança é obrigatório nas áreas operacionais." },
+            { text: "Abrir caixa com estilete comprado na loja, sem luva, cortando em direção à mão.", bin: "nok", hint: "Estilete não homologado e corte contra a mão são inseguros." },
+            { text: "Trabalhar em altura com cinto tipo paraquedista e talabarte duplo com absorvedor.", bin: "ok", hint: "Em plataforma e altura, o cinto com talabarte é obrigatório." },
+            { text: "Empilhar chapas de MDF na vertical, encostadas no linear, para ganhar espaço.", bin: "nok", hint: "MDF na vertical tomba. O armazenamento é na horizontal." }
           ],
-          explanation: "A responsabilidade inclui usar corretamente, guardar, conservar, higienizar e avisar defeito.",
-          review: "As responsabilidades com o EPI",
-          transcript: "Pergunta 1 do módulo 3."
-        },
-        {
-          id: "m3-p2",
-          type: "question",
-          question: "No capacete, o que precisa estar ajustado?",
-          alternatives: [
-            { id: "a", text: "Só a cor da função", correct: false },
-            { id: "b", text: "Carneira e cinta jugular", correct: true },
-            { id: "c", text: "Nada: o capacete solto já protege", correct: false },
-            { id: "d", text: "Apenas o adesivo da loja", correct: false }
-          ],
-          explanation: "O capacete só protege com carneira e cinta jugular ajustadas. As cores identificam a função: manutenção, brigada, liderança, visitante.",
-          review: "O ajuste do capacete",
-          transcript: "Pergunta 2 do módulo 3."
-        },
-        {
-          id: "m3-p3",
-          type: "question",
-          question: "Qual estilete pode ser usado na operação?",
-          alternatives: [
-            { id: "a", text: "Qualquer um comprado na loja", correct: false },
-            { id: "b", text: "Somente o estilete homologado Leroy Merlin, de lâmina retrátil", correct: true },
-            { id: "c", text: "Gilete, se tiver luva", correct: false },
-            { id: "d", text: "O que o colaborador trouxer de casa", correct: false }
-          ],
-          explanation: "Só o estilete homologado, com lâmina retrátil. Luvas são obrigatórias ao cortar fitilhos e embalagens.",
-          review: "O estilete homologado",
-          transcript: "Pergunta 3 do módulo 3."
-        },
-        {
-          id: "m3-p4",
-          type: "question",
-          question: "Como as chapas de MDF devem ser armazenadas?",
-          alternatives: [
-            { id: "a", text: "Na vertical, encostadas no linear", correct: false },
-            { id: "b", text: "Na horizontal, para evitar tombamento", correct: true },
-            { id: "c", text: "Em pé, no corredor de emergência", correct: false },
-            { id: "d", text: "Em qualquer posição, se alguém segurar", correct: false }
-          ],
-          explanation: "A HQ 1 proíbe o empilhamento vertical de MDF. O armazenamento é na horizontal para evitar tombamento.",
-          review: "O armazenamento seguro de chapas e painéis",
-          transcript: "Pergunta 4 — fim do módulo 3."
+          transcript: "Jogo. Classifique cada cena como segura ou insegura."
         }
       ]
     },
@@ -493,7 +431,7 @@ window.QUESTION_SCREEN_SESSION = {
           type: "cover",
           title: "Módulo 4 — Equipamentos Móveis, Racks, Escadas e Isolamento",
           subtitle: "Inspecionar escadas, não alterar racks, isolar áreas de risco e operar equipamentos motorizados só com carteirinha válida.",
-          image: "assets/fotos/m2-p1.png",
+          image: "assets/fotos/capa-modulo4.png",
           transcript: "Módulo 4: equipamentos móveis motorizados, racks, escadas e isolamento."
         },
         {
@@ -560,14 +498,17 @@ window.QUESTION_SCREEN_SESSION = {
           id: "m4-desafio",
           type: "quiz-intro",
           title: "Desafio NR-01 — Módulo 4",
-          count: 4,
-          minCorrect: 3,
+          count: 3,
+          minCorrect: 2,
           icon: "🪪",
-          transcript: "Desafio final do módulo 4: 4 perguntas."
+          transcript: "Desafio final do módulo 4: 3 perguntas."
         },
         {
           id: "m4-p1",
           type: "question",
+          image: "assets/fotos/m4p1.png",
+          imagePosition: "center 18%",
+          imageAlt: "Uso seguro de escada na operação",
           question: "Como se sobe e desce uma escada com segurança?",
           alternatives: [
             { id: "a", text: "De costas, falando ao celular", correct: false },
@@ -578,20 +519,6 @@ window.QUESTION_SCREEN_SESSION = {
           explanation: "A regra é subir e descer de frente, com corrimão, após inspecionar degraus, roldanas, guarda-corpo e pés. Celular é proibido.",
           review: "O uso seguro de escadas",
           transcript: "Pergunta 1 do módulo 4."
-        },
-        {
-          id: "m4-p2",
-          type: "question",
-          question: "O que significa a regra “Racks: nem pensar”?",
-          alternatives: [
-            { id: "a", text: "Qualquer colaborador pode reforçar o rack com madeira", correct: false },
-            { id: "b", text: "É proibido montar, desmontar ou alterar racks sem empresa homologada e chamado no ServiceNow", correct: true },
-            { id: "c", text: "Racks não precisam de manutenção", correct: false },
-            { id: "d", text: "Só a CIPA pode soldar o porta-paletes", correct: false }
-          ],
-          explanation: "Manutenção e alteração de racks são exclusivas de empresa homologada, via chamado no ServiceNow (Guia ADEO).",
-          review: "A regra de racks e porta-paletes",
-          transcript: "Pergunta 2 do módulo 4."
         },
         {
           id: "m4-p3",
@@ -605,7 +532,7 @@ window.QUESTION_SCREEN_SESSION = {
           ],
           explanation: "O isolamento é prévio e obrigatório em todas essas situações de risco.",
           review: "O isolamento de áreas de risco",
-          transcript: "Pergunta 3 do módulo 4."
+          transcript: "Pergunta 2 do módulo 4."
         },
         {
           id: "m4-p4",
@@ -619,7 +546,7 @@ window.QUESTION_SCREEN_SESSION = {
           ],
           explanation: "Sem treinamento específico, ASO e carteirinha dentro da validade, a operação é proibida.",
           review: "Os requisitos para operar equipamentos móveis",
-          transcript: "Pergunta 4 — fim do módulo 4."
+          transcript: "Pergunta 3 — fim do módulo 4."
         },
         {
           id: "m4-final",

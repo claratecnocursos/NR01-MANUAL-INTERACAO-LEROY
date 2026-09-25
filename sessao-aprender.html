@@ -6,10 +6,16 @@
   <meta name="referrer" content="no-referrer">
   <title>NR-01 — Manual de Integração e Segurança do Trabalho</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="question-screen.css?v=leroy-green14">
+  <link rel="stylesheet" href="question-screen.css?v=leroy-green28">
   <style>
     html, body { margin: 0; height: 100%; overflow: hidden; }
   </style>
+  <script>
+    (function () {
+      try { if (localStorage.getItem('nr01-dark') === '1') document.documentElement.classList.add('qs-dark'); }
+      catch (e) {}
+    })();
+  </script>
 </head>
 <body>
   <div class="qs-app" id="app">
@@ -63,11 +69,13 @@
         <img src="assets/fotos/LOGO.png" alt="TecnoCursos">
       </div>
       <div class="qs-progress" id="progress" aria-label="Progresso"></div>
-      <span class="qs-page-chip" id="pageChip" hidden>0/0</span>
-      <div class="qs-tools">
+      <div class="qs-top-meta">
+        <span class="qs-page-chip" id="pageChip" hidden>0/0</span>
         <button type="button" id="btnMode" class="qs-sim-btn" title="Modo simulação" hidden aria-pressed="false">
           <span class="qs-label" id="simLabel">Simulação: OFF</span>
         </button>
+      </div>
+      <div class="qs-tools">
         <button type="button" id="btnMusic" class="qs-tool-btn" title="Música" aria-pressed="false">
           <span class="qs-tool-disc">
             <svg class="qs-tool-ico ico-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -86,6 +94,17 @@
             </svg>
           </span>
           <span class="qs-tool-label">Transcrição</span>
+        </button>
+        <button type="button" id="btnDark" class="qs-tool-btn" title="Modo escuro" aria-pressed="false">
+          <span class="qs-tool-disc">
+            <svg class="qs-tool-ico ico-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z"/>
+            </svg>
+            <svg class="qs-tool-ico ico-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/>
+            </svg>
+          </span>
+          <span class="qs-tool-label">Escuro</span>
         </button>
       </div>
     </header>
@@ -147,10 +166,10 @@
 
   <audio id="bg-music" loop preload="metadata" aria-hidden="true"></audio>
 
-  <script src="question-screen-data.js?v=nr01-8"></script>
-  <script src="question-screen.js?v=nr01-2"></script>
+  <script src="question-screen-data.js?v=nr01-26"></script>
+  <script src="question-screen.js?v=nr01-10"></script>
   <script src="audios/audio-manifest.js?v=nr01-1"></script>
-  <script src="narration-text.js?v=nr01-1"></script>
+  <script src="narration-text.js?v=nr01-2"></script>
   <script src="narration.js?v=nr01-1"></script>
   <script>
 (function () {
@@ -660,6 +679,7 @@
       icon: faceIcon,
       title: quizState.passed ? 'Desafio concluído!' : 'Desafio não concluído',
       titleUnlock: titleUnlock,
+      mode: quizState.mode || '',
       review: quizState.passed ? [] : buildReviewList()
     }, {
       onContinue: handleContinue
@@ -1116,13 +1136,25 @@
         passed: false,
         points: 0,
         streak: 0,
-        bestStreak: 0
+        bestStreak: 0,
+        mode: ''
       };
     }
 
     if (s.type === 'sort' && Array.isArray(s.items) && s.items.length) {
       quizState.total = s.items.length;
       if (s.minCorrect != null) quizState.minCorrect = Number(s.minCorrect);
+      quizState.active = true;
+    }
+    if (s.type === 'match' && Array.isArray(s.pairs) && s.pairs.length) {
+      quizState.total = s.pairs.length;
+      if (s.minCorrect != null) quizState.minCorrect = Number(s.minCorrect);
+      quizState.active = true;
+    }
+    if (s.type === 'order') {
+      quizState.total = 1;
+      quizState.minCorrect = 1;
+      quizState.mode = 'order';
       quizState.active = true;
     }
 
@@ -1138,7 +1170,7 @@
         if (quizState.active && isQuizStep(s) && !s.opinion) {
           var pts = (result && result.points) || 0;
           sessionAnswers[s.id] = { pts: pts, correct: !!(result && result.correct) };
-          if (result && result.kind === 'sort' && result.total != null) {
+          if (result && (result.kind === 'sort' || result.kind === 'match' || result.kind === 'order') && result.total != null) {
             quizState.answered = result.total;
             quizState.total = result.total;
             quizState.correct = result.hits || 0;
@@ -1301,6 +1333,29 @@
     if (musicOn && bgMusic) bgMusic.play().catch(function () {});
     else if (bgMusic) bgMusic.pause();
   });
+
+  var DARK_KEY = 'nr01-dark';
+  var btnDark = document.getElementById('btnDark');
+  var darkLabel = btnDark && btnDark.querySelector('.qs-tool-label');
+  function applyDark(on) {
+    document.documentElement.classList.toggle('qs-dark', on);
+    if (app) app.classList.toggle('is-dark', on);
+    if (btnDark) {
+      btnDark.classList.toggle('is-on', on);
+      btnDark.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btnDark.title = on ? 'Modo claro' : 'Modo escuro';
+    }
+    if (darkLabel) darkLabel.textContent = on ? 'Claro' : 'Escuro';
+    try { localStorage.setItem(DARK_KEY, on ? '1' : '0'); } catch (e) {}
+  }
+  var darkOn = false;
+  try { darkOn = localStorage.getItem(DARK_KEY) === '1'; } catch (e) {}
+  applyDark(darkOn);
+  if (btnDark) {
+    btnDark.addEventListener('click', function () {
+      applyDark(!document.documentElement.classList.contains('qs-dark'));
+    });
+  }
 
   document.getElementById('btnMode').addEventListener('click', function () {
     toggleDemoMode();
