@@ -25,7 +25,7 @@ window.QUESTION_SCREEN_SESSION = {
           title: "Módulo 1 — Fundamentos da Segurança, Cultura Organizacional, Regras de Ouro e Gestão de Riscos (NR-1)",
           subtitle: "Apresentar a cultura de segurança da empresa, estabelecendo as diretrizes inegociáveis de comportamento, conceitos de risco, responsabilidades legais, atuação da CIPA e consequências do descumprimento de normas.",
           image: "assets/fotos/capa-modulo1.png",
-          transcript: "Módulo 1: fundamentos da segurança, cultura organizacional, regras de ouro e gestão de riscos."
+          transcript: "Módulo um. Fundamentos da Segurança, Cultura Organizacional, Regras de Ouro e Gestão de Riscos, N R um. Apresentar a cultura de segurança da empresa, estabelecendo as diretrizes inegociáveis de comportamento, conceitos de risco, responsabilidades legais, atuação da CIPA e consequências do descumprimento de normas."
         },
         {
           id: "m1-lema",
@@ -41,7 +41,7 @@ window.QUESTION_SCREEN_SESSION = {
             { icon: "📋", title: "Política de SSO", body: "A Política de Segurança e Saúde Ocupacional organiza o compromisso da empresa com esse lema." }
           ],
           quote: "Pessoas Primeiro e Segurança Primeiro — Human First, Safety First.",
-          transcript: "Lema institucional: pessoas primeiro e segurança primeiro."
+          transcript: "Pessoas Primeiro e Segurança Primeiro. O lema institucional guia cada decisão no chão da loja e do depósito: Human First, Safety First. Pessoas Primeiro: nenhuma meta operacional vale mais do que a vida e a integridade de quem está na operação. Segurança Primeiro: o trabalho só começa quando o risco está controlado. Comportamento inegociável: as regras de ouro não são sugestão, são o padrão mínimo de conduta. Política de SSO: a Política de Segurança e Saúde Ocupacional organiza o compromisso da empresa com esse lema. Pessoas Primeiro e Segurança Primeiro, Human First, Safety First."
         },
         {
           id: "m1-principios",
@@ -67,7 +67,7 @@ window.QUESTION_SCREEN_SESSION = {
             { icon: "5", title: "Escadas", body: "Proibido celular. Uso obrigatório do corrimão." }
           ],
           quote: "Regra quebrada é risco assumido — e risco assumido vira acidente.",
-          transcript: "Regras de ouro de 1 a 5: proteção do corpo, máquinas, empilhadeiras, estocagem e escadas."
+          transcript: "As dez Regras de Ouro, parte um. São o padrão inegociável de segurança no dia a dia. Um, proteção do corpo: cabeça, rosto, mãos e pés sempre protegidos. Dois, máquinas e equipamentos: operar e usar somente de forma segura. Três, empilhadeiras: condução e direção responsáveis. Quatro, estocagem: armazenamento seguro de produtos. Cinco, escadas: proibido celular. Uso obrigatório do corrimão. Regra quebrada é risco assumido, e risco assumido vira acidente."
         },
         {
           id: "m1-regras-2",
@@ -84,7 +84,7 @@ window.QUESTION_SCREEN_SESSION = {
             { icon: "10", title: "Atenção constante", body: "Cuidar da própria segurança, dos colegas e dos clientes." }
           ],
           quote: "Aplicar as 10 Regras de Ouro no dia a dia é o principal aprendizado deste módulo.",
-          transcript: "Regras de ouro de 6 a 10: incêndio, altura, estilete, reporte e atenção constante."
+          transcript: "As dez Regras de Ouro, parte dois. As cinco regras seguintes fecham o padrão de conduta em loja e depósito. Seis, combate a incêndio: garantir acesso a equipamentos e saídas de emergência. Sete, trabalho em altura: plataformas e escadas com isolamento obrigatório de corredores. Oito, estilete: uso exclusivo de estiletes homologados pela empresa. Nove, reporte imediato: acidentes, incidentes e ameaças vão à liderança na hora. Dez, atenção constante: cuidar da própria segurança, dos colegas e dos clientes. Aplicar as dez Regras de Ouro no dia a dia é o principal aprendizado deste módulo."
         },
         {
           id: "m1-competencia-atos",
@@ -120,7 +120,7 @@ window.QUESTION_SCREEN_SESSION = {
           count: 3,
           minCorrect: 2,
           icon: "🎮",
-          transcript: "Desafio final do módulo 1: 3 perguntas."
+          transcript: "Desafio N R zero um, módulo um. Responda três perguntas de múltipla escolha. Você precisa acertar no mínimo duas para avançar."
         },
         {
           id: "m1-p1",
@@ -136,7 +136,7 @@ window.QUESTION_SCREEN_SESSION = {
           ],
           explanation: "O lema é Pessoas Primeiro e Segurança Primeiro — Human First, Safety First.",
           review: "O lema institucional de segurança",
-          transcript: "Pergunta 1 do módulo 1."
+          transcript: "Qual é o lema institucional de segurança? Opção um: produção primeiro, segurança depois. Opção dois: Pessoas Primeiro e Segurança Primeiro, Human First, Safety First. Opção três: só a liderança responde pela segurança. Opção quatro: segurança é opcional se a loja estiver cheia."
         },
         {
           id: "m1-p2",
@@ -152,7 +152,7 @@ window.QUESTION_SCREEN_SESSION = {
           ],
           explanation: "Competência é saber o quê, para quê e como fazer a atividade com segurança.",
           review: "O conceito de competência",
-          transcript: "Pergunta 2 do módulo 1."
+          transcript: "O que é competência, neste treinamento? Opção um: ter cargo de liderança. Opção dois: saber o quê, para quê e como realizar as atividades. Opção três: memorizar o organograma da CIPA. Opção quatro: trabalhar rápido sem perguntar."
         },
         {
           id: "m1-p3",
@@ -168,7 +168,7 @@ window.QUESTION_SCREEN_SESSION = {
           ],
           explanation: "Ato ou comportamento inseguro é a ação da pessoa. Condição insegura é o ambiente ou o equipamento fora do padrão.",
           review: "Atos inseguros versus condições inseguras",
-          transcript: "Pergunta 3 — fim do módulo 1."
+          transcript: "Qual é a diferença entre ato inseguro e condição insegura? Opção um: são a mesma coisa. Opção dois: ato é o que a pessoa faz; condição é o que o ambiente ou o equipamento permite. Opção três: condição insegura só existe depois do acidente. Opção quatro: ato inseguro só vale para máquinas."
         }
       ]
     },
@@ -188,7 +188,7 @@ window.QUESTION_SCREEN_SESSION = {
           title: "Módulo 2 — Gestão de Ocorrências, Emergências, Incêndios e Saúde Ocupacional",
           subtitle: "Classificar e comunicar acidentes imediatamente, agir em incêndio e evacuação, e usar os programas do SESMT, PCMSO e Viva Bem.",
           image: "assets/fotos/capa-modulo2.png",
-          transcript: "Módulo 2: ocorrências, emergências, incêndios e saúde ocupacional."
+          transcript: "Módulo dois. Gestão de Ocorrências, Emergências, Incêndios e Saúde Ocupacional. Classificar e comunicar acidentes imediatamente, agir em incêndio e evacuação, e usar os programas do SESMT, PCMSO e Viva Bem."
         },
         {
           id: "m2-ocorrencias",
@@ -234,7 +234,7 @@ window.QUESTION_SCREEN_SESSION = {
             { icon: "🚨", title: "Detecção", body: "Alarme, detector de fumaça e sprinkler sem bloqueio." }
           ],
           quote: "Equipamento de combate obstruído não protege ninguém.",
-          transcript: "Equipamentos de combate a incêndio. Manter desobstruídos saídas de emergência, extintores, hidrantes, detectores de fumaça e sprinklers."
+          transcript: "Equipamentos de combate a incêndio. Manter desobstruídos: saídas de emergência, extintores, hidrantes, detectores de fumaça e sprinklers. Saídas: rotas e portas de emergência sempre livres. Extintor: acesso visível, nada na frente do equipamento. Hidrante: caminho até hidrante e caixa de mangueira sem obstáculo. Detecção: alarme, detector de fumaça e sprinkler sem bloqueio. Equipamento de combate obstruído não protege ninguém."
         },
         {
           id: "m2-evacuacao",
@@ -279,7 +279,7 @@ window.QUESTION_SCREEN_SESSION = {
             { icon: "🏥", title: "Central de Saúde (D'Or)", body: "0800 940 1265 — aconselhamento médico, plano de saúde e Amor de Mãe até o 3º mês do bebê." }
           ],
           quote: "Você não está sozinho.",
-          transcript: "Campanhas de saúde. P C M S O com exames admissional, periódicos in company, retorno, mudança de risco e demissional. Vacinação anual contra a gripe. F D S para produtos químicos. Viva Bem Auster, 0800 770 2324, 24 horas. Central de Saúde D Or, 0800 940 1265, e programa Amor de Mãe."
+          transcript: "Campanhas de saúde da Leroy Merlin. A prevenção continua no cuidado com a sua saúde. O PCMSO acompanha a vida laboral, e os canais de apoio estão abertos o tempo todo. PCMSO: admissional, periódicos in company, retorno ao trabalho, mudança de risco, demissional e consultas assistenciais. Vacinação: campanha anual de vacinação contra a gripe. FDS: tintas, colas, adesivos ou solventes, consulte a FDS antes de iniciar a atividade. Viva Bem Auster: gratuito, confidencial e 24 horas, 0800 770 2324. Orientação profissional: psicologia, jurídico, financeiro, nutrição, fisioterapia, serviço social e consultoria pet. Central de Saúde D'Or: 0800 940 1265, aconselhamento médico, plano de saúde e Amor de Mãe até o terceiro mês do bebê. Você não está sozinho."
         },
         {
           id: "m2-ergonomia",
@@ -298,7 +298,7 @@ window.QUESTION_SCREEN_SESSION = {
           minCorrect: 4,
           icon: "🚨",
           body: "Você está no plantão. São <strong>5 cenas</strong> dos vídeos deste módulo. Toque em <strong>Faça</strong> ou <strong>Nunca</strong>. Acerte no mínimo <strong>4</strong> para avançar.",
-          transcript: "Missão faça ou nunca. São cinco cenas. Toque em faça ou nunca. Acerte no mínimo quatro para avançar."
+          transcript: "Missão: Faça ou nunca. Você está no plantão. São cinco cenas dos vídeos deste módulo. Toque em Faça ou Nunca. Acerte no mínimo quatro para avançar."
         },
         {
           id: "m2-jogo",
@@ -317,7 +317,7 @@ window.QUESTION_SCREEN_SESSION = {
             { text: "O alarme tocou: seguir o brigadista de capacete vermelho e ir ao ponto de encontro, caminhando com calma.", bin: "ok", hint: "Os 4 passos: saídas, brigadistas, instruções da brigada, ponto de encontro. Nunca corra." },
             { text: "Precisa de apoio? Ligar no Viva Bem 0800 770 2324 — gratuito, confidencial e 24 horas.", bin: "ok", hint: "Central de Saúde D'Or: 0800 940 1265. Você não está sozinho." }
           ],
-          transcript: "Jogo. Classifique cada cena como faça ou nunca."
+          transcript: "Faça ou nunca? Pense rápido. É o dia a dia da loja, do depósito e do cuidado com você. Toque em Nunca ou Faça para cada cena."
         }
       ]
     },
@@ -337,7 +337,7 @@ window.QUESTION_SCREEN_SESSION = {
           title: "Módulo 3 — EPIs, Ferramentas Manuais e Práticas Seguras",
           subtitle: "Usar, ajustar e conservar cada EPI, padronizar o estilete homologado e aplicar as HQs educativas.",
           image: "assets/fotos/capa-modulo3.png",
-          transcript: "Módulo 3: EPIs, ferramentas manuais e práticas seguras em loja e depósito."
+          transcript: "Módulo três. EPIs, Ferramentas Manuais e Práticas Seguras. Usar, ajustar e conservar cada EPI, padronizar o estilete homologado e aplicar as HQs educativas."
         },
         {
           id: "m3-v-epis",
@@ -373,7 +373,7 @@ window.QUESTION_SCREEN_SESSION = {
             { icon: "✓", title: "Correto", body: "Luva no apoio, corte para fora, estilete homologado." }
           ],
           quote: "Conservar e usar o estilete do jeito certo é responsabilidade de cada um.",
-          transcript: "Uso do estilete. Esta ferramenta não é um E P I, porém você é o responsável pela conservação e pelo uso adequado. Nunca corte em direção à mão. Não use lâmina solta. O correto é luva no apoio, corte para fora e estilete homologado."
+          transcript: "Uso do estilete. Esta ferramenta não é um EPI, porém você é o responsável pela conservação e pelo uso adequado. Errado: nunca corte em direção à mão ou ao corpo. Errado: não use lâmina solta nem estilete fora do padrão. Correto: luva no apoio, corte para fora, estilete homologado. Conservar e usar o estilete do jeito certo é responsabilidade de cada um."
         },
         {
           id: "m3-lesoes",
@@ -387,7 +387,7 @@ window.QUESTION_SCREEN_SESSION = {
           image: "assets/fotos/imagens-fortes.png",
           imageAlt: "Fotografias reais de cortes e lesões em mãos e dedos",
           quote: "Estilete homologado e luva no corte existem para que isso não aconteça.",
-          transcript: "Casos reais de cortes. Falta de E P I e estilete fora do padrão causaram lesões graves em mãos e dedos. A foto é forte e só aparece se você escolher revelar."
+          transcript: "Casos reais de cortes. Falta de EPI e estilete fora do padrão causaram lesões graves em mãos e dedos. A foto a seguir é forte e só aparece se você escolher revelar. Estilete homologado e luva no corte existem para que isso não aconteça."
         },
         {
           id: "m3-v-estilete",
@@ -409,7 +409,7 @@ window.QUESTION_SCREEN_SESSION = {
             { image: "assets/fotos/hq2.png", caption: "HQ 2 — Abastecimento no aéreo e plataforma elevatória.", imageAlt: "HQ 2: aéreo e plataforma elevatória" }
           ],
           quote: "Prevenção é a chave. Acidente zero.",
-          transcript: "Exemplos de ocorrência. Pratique a segurança em todos os momentos."
+          transcript: "Exemplos de ocorrência. Pratique a segurança em todos os momentos. HQ um: armazenamento de chapas e painéis. HQ dois: abastecimento no aéreo e plataforma elevatória. Prevenção é a chave. Acidente zero."
         },
         {
           id: "m3-desafio",
@@ -419,7 +419,7 @@ window.QUESTION_SCREEN_SESSION = {
           minCorrect: 4,
           icon: "🛡️",
           body: "São <strong>6 cenas</strong> da loja e do depósito. Classifique cada uma como <strong>Seguro</strong> ou <strong>Inseguro</strong>. Acerte no mínimo <strong>4</strong> para avançar.",
-          transcript: "Missão seguro ou inseguro. São seis cenas. Classifique cada uma. Acerte no mínimo quatro para avançar."
+          transcript: "Missão: Seguro ou Inseguro? São seis cenas da loja e do depósito. Classifique cada uma como Seguro ou Inseguro. Acerte no mínimo quatro para avançar."
         },
         {
           id: "m3-jogo",
@@ -439,7 +439,7 @@ window.QUESTION_SCREEN_SESSION = {
             { text: "Trabalhar em altura com cinto tipo paraquedista e talabarte duplo com absorvedor.", bin: "ok", hint: "Em plataforma e altura, o cinto com talabarte é obrigatório." },
             { text: "Empilhar chapas de MDF na vertical, encostadas no linear, para ganhar espaço.", bin: "nok", hint: "MDF na vertical tomba. O armazenamento é na horizontal." }
           ],
-          transcript: "Jogo. Classifique cada cena como segura ou insegura."
+          transcript: "Seguro ou inseguro? Toque no lado certo. Pense rápido, é o dia a dia da operação."
         }
       ]
     },
@@ -459,7 +459,7 @@ window.QUESTION_SCREEN_SESSION = {
           title: "Módulo 4 — Equipamentos Móveis, Racks, Escadas e Isolamento",
           subtitle: "Inspecionar escadas, não alterar racks, isolar áreas de risco e operar equipamentos motorizados só com carteirinha válida.",
           image: "assets/fotos/capa-modulo4.png",
-          transcript: "Módulo 4: equipamentos móveis motorizados, racks, escadas e isolamento."
+          transcript: "Módulo quatro. Equipamentos Móveis, Racks, Escadas e Isolamento. Inspecionar escadas, não alterar racks, isolar áreas de risco e operar equipamentos motorizados só com carteirinha válida."
         },
         {
           id: "m4-v-escadas",
@@ -471,6 +471,25 @@ window.QUESTION_SCREEN_SESSION = {
           transcript: "Vídeo. Uso seguro de escadas. Assista ao vídeo. Avance quando concluir."
         },
         {
+          id: "m4-escada-uso",
+          type: "content",
+          layout: "figure",
+          wide: true,
+          kicker: "📄 Uso de escada",
+          title: "Uso de escada",
+          body: "Realize a análise das condições das escadas antes do uso.",
+          image: "assets/fotos/ESCADA 2.png",
+          imageAlt: "Escada de plataforma: subir e descer de frente, conferir pés, roldanas, corrimão e guarda-corpo",
+          cards: [
+            { icon: "🪜", title: "Degraus", body: "Degraus íntegros, sem folga nem dano." },
+            { icon: "⚙️", title: "Roldanas e pés", body: "Roldanas e pés em perfeito estado." },
+            { icon: "✋", title: "Corrimão", body: "Corrimão e guarda-corpo firmes. Use o corrimão." },
+            { icon: "👤", title: "De frente", body: "Subir e descer de frente, nesse sentido." }
+          ],
+          quote: "Subir e descer de frente. Celular no bolso. Inspeção antes do primeiro degrau.",
+          transcript: "Uso de escada. Realize a análise das condições das escadas antes do uso. Degraus: íntegros, sem folga nem dano. Roldanas e pés: em perfeito estado. Corrimão e guarda-corpo firmes. Use o corrimão. Subir e descer de frente, nesse sentido. Celular no bolso. Inspeção antes do primeiro degrau."
+        },
+        {
           id: "m4-v-racks",
           type: "video",
           kicker: "🎥 Vídeo",
@@ -480,34 +499,22 @@ window.QUESTION_SCREEN_SESSION = {
           transcript: "Vídeo. Estruturas de armazenamento: a regra para racks e porta-paletes. Assista ao vídeo. Avance quando concluir."
         },
         {
-          id: "m4-isolamento",
-          type: "content",
-          kicker: "📄 Sinalização",
-          title: "Isolar antes de executar",
-          body: "Área de risco sem isolamento é área liberada para o acidente.",
-          cards: [
-            { icon: "🚧", title: "Quando isolar", body: "Plataforma elevatória, carga no aéreo, obras, reformas, valas e implementações." },
-            { icon: "📏", title: "Como", body: "Isolamento físico prévio, visível e contínuo." },
-            { icon: "🚶", title: "Fluxo de pessoas", body: "Cliente e colega não atravessam a zona isolada." },
-            { icon: "📣", title: "Antes de ligar", body: "Só opera depois que a área está fechada." }
-          ],
-          quote: "Primeiro isola. Depois sobe, move ou corta.",
-          transcript: "Isolamento físico obrigatório em plataforma, aéreo, obras, valas e implementações."
+          id: "m4-v-sinalizacao",
+          type: "video",
+          kicker: "🎥 Vídeo",
+          title: "Sinalização e Isolamento Obrigatório de Áreas de Risco",
+          playerId: "panda-08c72f18-4f8b-4db7-9130-786077a97ce7",
+          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=08c72f18-4f8b-4db7-9130-786077a97ce7",
+          transcript: "Vídeo. Sinalização e isolamento obrigatório de áreas de risco. Assista ao vídeo. Avance quando concluir."
         },
         {
-          id: "m4-moveis",
-          type: "content",
-          kicker: "📄 NR-11 e NR-12",
-          title: "Equipamentos móveis motorizados",
-          body: "Sem treinamento, ASO e carteirinha válida, ninguém liga a máquina.",
-          cards: [
-            { icon: "🚜", title: "Tipos", body: "Empilhadeiras, transpaleteiras ou paleteiras elétricas e plataformas elevatórias." },
-            { icon: "🎓", title: "Requisitos", body: "Treinamento NR-11 e NR-12, ASO em dia e carteirinha de operador dentro da validade." },
-            { icon: "🪪", title: "Carteirinha", body: "Porte obrigatório durante a operação." },
-            { icon: "🚫", title: "Proibido", body: "Pessoa não habilitada não liga e não opera." }
-          ],
-          quote: "A carteirinha vencida equivale a não ter habilitação.",
-          transcript: "Empilhadeiras, paleteiras e plataformas: treinamento, ASO e carteirinha válida."
+          id: "m4-v-moveis",
+          type: "video",
+          kicker: "🎥 Vídeo",
+          title: "Operação de Equipamentos Móveis Motorizados (NR-11 e NR-12)",
+          playerId: "panda-e083def5-d2cf-4bb7-b509-9feff68cd7fb",
+          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=e083def5-d2cf-4bb7-b509-9feff68cd7fb",
+          transcript: "Vídeo. Operação de equipamentos móveis motorizados, N R onze e N R doze. Assista ao vídeo. Avance quando concluir."
         },
         {
           id: "m4-desafio",
@@ -516,7 +523,7 @@ window.QUESTION_SCREEN_SESSION = {
           count: 3,
           minCorrect: 2,
           icon: "🪪",
-          transcript: "Desafio final do módulo 4: 3 perguntas."
+          transcript: "Desafio N R zero um, módulo quatro. Responda três perguntas de múltipla escolha. Você precisa acertar no mínimo duas para avançar."
         },
         {
           id: "m4-p1",
@@ -533,7 +540,7 @@ window.QUESTION_SCREEN_SESSION = {
           ],
           explanation: "A regra é subir e descer de frente, com corrimão, após inspecionar degraus, roldanas, guarda-corpo e pés. Celular é proibido.",
           review: "O uso seguro de escadas",
-          transcript: "Pergunta 1 do módulo 4."
+          transcript: "Como se sobe e desce uma escada com segurança? Opção um: de costas, falando ao celular. Opção dois: sempre de frente para a escada, usando o corrimão, sem celular. Opção três: de lado, se estiver com pressa. Opção quatro: pulando degraus para ganhar tempo."
         },
         {
           id: "m4-p3",
@@ -550,7 +557,7 @@ window.QUESTION_SCREEN_SESSION = {
           ],
           explanation: "O isolamento é prévio e obrigatório em todas essas situações de risco.",
           review: "O isolamento de áreas de risco",
-          transcript: "Pergunta 2 do módulo 4."
+          transcript: "Quando o isolamento físico é obrigatório? Opção um: só depois que o acidente acontece. Opção dois: antes de plataforma elevatória, movimentação de carga no aéreo, obras, reformas, valas e implementações. Opção três: apenas no horário de visita da diretoria. Opção quatro: nunca, se a loja estiver aberta."
         },
         {
           id: "m4-p4",
@@ -567,7 +574,7 @@ window.QUESTION_SCREEN_SESSION = {
           ],
           explanation: "Sem treinamento específico, ASO e carteirinha dentro da validade, a operação é proibida.",
           review: "Os requisitos para operar equipamentos móveis",
-          transcript: "Pergunta 3 — fim do módulo 4."
+          transcript: "O que é obrigatório para operar empilhadeira, paleteira elétrica ou plataforma? Opção um: apenas a chave da máquina. Opção dois: treinamento NR-11 e NR-12, ASO em dia e carteirinha de operador válida. Opção três: autorização verbal de um colega. Opção quatro: ter trabalhado um dia no depósito."
         },
         {
           id: "m4-final",
@@ -579,7 +586,7 @@ window.QUESTION_SCREEN_SESSION = {
           quote: "Pessoas Primeiro e Segurança Primeiro. Tem alguém esperando a sua chegada.",
           chips: ["NR-01", "Integração", "Regras de Ouro"],
           image: "assets/fotos/capafinal.png",
-          transcript: "Parabéns. Você concluiu o Manual de Integração e Segurança do Trabalho. Pessoas primeiro e segurança primeiro."
+          transcript: "Treinamento concluído. Parabéns. Você concluiu o treinamento N R zero um, Manual de Integração e Segurança do Trabalho. Pessoas Primeiro e Segurança Primeiro. Tem alguém esperando a sua chegada."
         }
       ]
     }

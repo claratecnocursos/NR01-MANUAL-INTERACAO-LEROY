@@ -16,10 +16,10 @@
   // Abertura: o conteúdo é HTML fixo, então o texto mora aqui.
   // "100%" vira extenso para a voz não ler "por cento" errado.
   var HOME_TEXT = [
-    'Abertura do treinamento.',
+    'Segurança do Trabalho.',
     'N R zero um, Manual de Integração e Segurança do Trabalho.',
     'Cultura de segurança, Regras de Ouro, emergências, E P Is e práticas em loja e depósito.',
-    'São quatro módulos completos, em treinamento cem por cento online.'
+    'Quatro módulos completos. Treinamento cem por cento online.'
   ].join(' ');
 
   function stripHtml(value) {
@@ -159,6 +159,7 @@
 
   function buildScreenText(screen) {
     if (!screen) return '';
+    if (screen.transcript) return clean(stripHtml(screen.transcript));
     var parts = [];
 
     // vídeo: só anuncia o que vem. O conteúdo quem narra é o próprio vídeo.
@@ -223,6 +224,7 @@
 
   function buildMenuText(session, nextModule) {
     var mods = (session && session.modules) || [];
+    var nums = ['', 'um', 'dois', 'três', 'quatro'];
     var parts = [
       'N R zero um, Manual de Integração e Segurança do Trabalho.',
       'Um módulo por vez. Ao concluir, o próximo é liberado.'
@@ -230,9 +232,10 @@
     if (nextModule) {
       var m = null;
       mods.forEach(function (mod) { if (mod.id === nextModule) m = mod; });
-      parts.push('Módulo ' + nextModule + ' de ' + mods.length + (m ? ', ' + clean(m.title) : '') + '. Toque em iniciar módulo.');
+      var n = nums[nextModule] || String(nextModule);
+      parts.push('Módulo ' + n + ' de ' + (nums[mods.length] || mods.length) + (m ? ', ' + clean(m.title) : '') + '. Toque em iniciar módulo.');
     } else {
-      parts.push('Treinamento concluído. Você pode revisar o módulo 1.');
+      parts.push('Treinamento concluído. Você pode revisar o módulo um.');
     }
     return parts.join(' ').replace(/\s+/g, ' ').trim();
   }

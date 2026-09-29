@@ -116,7 +116,15 @@ async function main() {
     return;
   }
 
-  const wanted = ids;
+  const wanted = ids.map(function (id) {
+    if (id === 'home') return 'home-nr01';
+    if (id === 'menu-1') return 'menu-nr01-1';
+    if (id === 'menu-2') return 'menu-nr01-2';
+    if (id === 'menu-3') return 'menu-nr01-3';
+    if (id === 'menu-4') return 'menu-nr01-4';
+    if (id === 'menu-done') return 'menu-nr01-done';
+    return id;
+  });
 
   console.log('Autenticando no proxy...');
   const token = await login();

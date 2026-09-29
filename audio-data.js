@@ -37,6 +37,8 @@ function ttsSpeak(text) {
   t = t.replace(/\bMDF\b/g, 'M D F');
   t = t.replace(/\bHQs\b/g, 'agá quês');
   t = t.replace(/\bHQ\b/g, 'agá quê');
+  t = t.replace(/\bFDS\b/g, 'F D S');
+  t = t.replace(/\b0800\s*940\s*1265\b/g, 'zero oitocentos, nove quatro zero, um dois seis cinco');
   t = t.replace(/\b0800\s*770\s*2324\b/g, 'zero oitocentos, sete sete zero, dois três dois quatro');
   t = t.replace(/\bEPIs\b/g, 'E P Is');
   t = t.replace(/\bEPI\b/g, 'E P I');
@@ -83,10 +85,10 @@ function ttsSpeak(text) {
 /** Textos falados (já no jeito da voz). Fonte UTF-8. */
 const RAW_OVERRIDES = {
   'home-nr01':
-    'Abertura do treinamento. N R zero um, Manual de Integração e Segurança do Trabalho. Cultura de segurança, Regras de Ouro, emergências, E P Is e práticas em loja e depósito. São quatro módulos completos, em treinamento cem por cento online.',
+    'Segurança do Trabalho. N R zero um, Manual de Integração e Segurança do Trabalho. Cultura de segurança, Regras de Ouro, emergências, E P Is e práticas em loja e depósito. Quatro módulos completos. Treinamento cem por cento online.',
 
   'menu-nr01-1':
-    'N R zero um, Manual de Integração e Segurança do Trabalho. Um módulo por vez. Ao concluir, o próximo é liberado. Módulo um de quatro, Fundamentos da Segurança, Cultura Organizacional, Regras de Ouro e Gestão de Riscos. Toque em iniciar módulo.',
+    'N R zero um, Manual de Integração e Segurança do Trabalho. Um módulo por vez. Ao concluir, o próximo é liberado. Módulo um de quatro, Fundamentos da Segurança, Cultura Organizacional, Regras de Ouro e Gestão de Riscos, N R um. Toque em iniciar módulo.',
   'menu-nr01-2':
     'N R zero um, Manual de Integração e Segurança do Trabalho. Um módulo por vez. Ao concluir, o próximo é liberado. Módulo dois de quatro, Gestão de Ocorrências, Emergências, Incêndios e Saúde Ocupacional. Toque em iniciar módulo.',
   'menu-nr01-3':
@@ -94,7 +96,7 @@ const RAW_OVERRIDES = {
   'menu-nr01-4':
     'N R zero um, Manual de Integração e Segurança do Trabalho. Um módulo por vez. Ao concluir, o próximo é liberado. Módulo quatro de quatro, Equipamentos Móveis Motorizados, Estruturas de Armazenamento, Escadas e Isolamento. Toque em iniciar módulo.',
   'menu-nr01-done':
-    'N R zero um, Manual de Integração e Segurança do Trabalho. Treinamento concluído. Você pode revisar o módulo um.'
+    'N R zero um, Manual de Integração e Segurança do Trabalho. Um módulo por vez. Ao concluir, o próximo é liberado. Treinamento concluído. Você pode revisar o módulo um.'
 };
 
 
@@ -138,8 +140,8 @@ function catalogEntries(session) {
 
 function fallbackText(session, entry) {
   if (entry.id === T.HOME_KEY) return T.buildHomeText();
-  if (entry.id === T.menuAudioKey(0)) return T.buildMenuText(session, 0);
-  const menuMatch = /^menu-(\d+)$/.exec(entry.id);
+  if (entry.id === T.menuAudioKey(0) || entry.id === 'menu-nr01-done') return T.buildMenuText(session, 0);
+  const menuMatch = /^menu-nr01-(\d+)$/.exec(entry.id);
   if (menuMatch) return T.buildMenuText(session, Number(menuMatch[1]));
   if (entry.screen) return T.buildScreenText(entry.screen);
   return '';
