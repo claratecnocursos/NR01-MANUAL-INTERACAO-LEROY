@@ -192,105 +192,132 @@ window.QUESTION_SCREEN_SESSION = {
         },
         {
           id: "m2-ocorrencias",
-          type: "content",
-          kicker: "📄 Classificação",
-          title: "Tipos de ocorrência",
-          body: "Classificar certo é o primeiro passo para comunicar certo.",
-          cards: [
-            { icon: "🧱", title: "Acidente material", body: "Dano a produto, estrutura ou equipamento, sem lesão." },
-            { icon: "⚠️", title: "Incidente", body: "Quase acidente: o dano quase aconteceu." },
-            { icon: "🩹", title: "ASA", body: "Acidente sem afastamento." },
-            { icon: "🏥", title: "ACA", body: "Acidente com afastamento." },
-            { icon: "🚗", title: "Trajeto", body: "No caminho de casa para o trabalho ou o retorno." },
-            { icon: "🤝", title: "Parceiros e clientes", body: "Ocorrência envolvendo terceiros ou clientes na unidade." }
-          ],
-          quote: "Toda ocorrência entra no fluxo. Nenhuma fica só no corredor.",
-          transcript: "Classificação: material, incidente, ASA, ACA, trajeto, parceiros e clientes."
-        },
-        {
-          id: "m2-fluxo",
-          type: "content",
-          kicker: "📄 Comunicação",
-          title: "Fluxo imediato e registro no Moki",
-          body: "A comunicação não espera o fim do turno.",
-          cards: [
-            { icon: "1", title: "Colaborador acidentado", body: "Avisa na hora." },
-            { icon: "2", title: "Gestor imediato", body: "Gerente de plantão assume o chamado." },
-            { icon: "3", title: "Diretor / SESMT", body: "Análise e classificação oficiais." },
-            { icon: "💻", title: "Moki", body: "Registro obrigatório no sistema." }
-          ],
-          quote: "Colaborador → gestor imediato → diretor ou SESMT → classificação. Sempre no Moki.",
-          transcript: "Fluxo: colaborador, gestor imediato, diretor ou SESMT, e registro no Moki."
+          type: "video",
+          kicker: "🎥 Vídeo",
+          title: "Classificação de Ocorrências e Fluxo de Comunicação (Moki)",
+          playerId: "panda-850593ca-a315-482b-a429-4b78e12af5f6",
+          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=850593ca-a315-482b-a429-4b78e12af5f6",
+          transcript: "Vídeo. Classificação de ocorrências e fluxo de comunicação no Moki. Assista ao vídeo. Avance quando concluir."
         },
         {
           id: "m2-casos",
-          type: "content",
-          kicker: "📄 Estudos de caso",
-          title: "O que casos reais ensinam",
-          body: "Desvios pequenos viram eventos graves quando o armazenamento ou o EPI falha.",
-          cards: [
-            { icon: "📦", title: "Chapas de MDF", body: "Queda de 9 chapas — 459 kg — por armazenagem vertical inadequada no linear." },
-            { icon: "✋", title: "Lesões em mãos", body: "Cortes graves por falta de EPI e uso de estilete não padronizado." },
-            { icon: "🚫", title: "Aprendizado", body: "MDF na horizontal. Estilete homologado. Luvas no corte." },
-            { icon: "📣", title: "Depois do susto", body: "Comunique, isole e registre. Não esconda o desvio." }
-          ],
-          quote: "A prevenção é a chave. Acidente zero começa no jeito de estocar e de cortar.",
-          transcript: "Casos: queda de chapas de MDF e lesões por estilete não homologado."
+          type: "video",
+          kicker: "🎥 Vídeo",
+          title: "Estudos de Caso: Aprendendo com Ocorrências Reais",
+          playerId: "panda-c1f5996f-5143-4d0f-ba2f-efe66587b91a",
+          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=c1f5996f-5143-4d0f-ba2f-efe66587b91a",
+          transcript: "Vídeo. Estudos de caso: aprendendo com ocorrências reais. Assista ao vídeo. Avance quando concluir."
         },
         {
           id: "m2-incendio",
+          type: "video",
+          kicker: "🎥 Vídeo",
+          title: "Equipamentos de Incêndio, Desobstrução e Segurança Patrimonial",
+          playerId: "panda-0958bf75-2e56-4c9e-a1dc-a3dab0cd9d32",
+          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=0958bf75-2e56-4c9e-a1dc-a3dab0cd9d32",
+          transcript: "Vídeo. Equipamentos de incêndio, desobstrução e segurança patrimonial. Assista ao vídeo. Avance quando concluir."
+        },
+        {
+          id: "m2-equip-incendio",
           type: "content",
+          layout: "figure",
+          wide: true,
           kicker: "📄 Emergência",
-          title: "Incêndio, equipamentos e evacuação",
-          body: "Conhecer o equipamento e o caminho salva tempo — e vida.",
+          title: "Equipamentos de combate a incêndio",
+          body: "Manter desobstruídos: saídas de emergência, extintores, hidrantes, detectores de fumaça e sprinklers.",
+          image: "assets/fotos/EMERGENCIA.png",
+          imageAlt: "Extintor, alarme, sprinkler, hidrante e caixa de mangueira",
           cards: [
-            { icon: "🧯", title: "Equipamentos", body: "Extintores, acionadores manuais, sprinklers, hidrantes e portas corta-fogo." },
-            { icon: "🚫", title: "Nunca obstruir", body: "Acesso a equipamento de combate e saída de emergência é sagrado." },
-            { icon: "🚪", title: "Evacuação", body: "Conheça saídas e brigadistas. Siga a brigada. Caminhe com calma." },
-            { icon: "📍", title: "Ponto de encontro", body: "Só pare quando chegar ao ponto de encontro." }
+            { icon: "🚪", title: "Saídas", body: "Rotas e portas de emergência sempre livres." },
+            { icon: "🧯", title: "Extintor", body: "Acesso visível. Nada na frente do equipamento." },
+            { icon: "🚰", title: "Hidrante", body: "Caminho até hidrante e caixa de mangueira sem obstáculo." },
+            { icon: "🚨", title: "Detecção", body: "Alarme, detector de fumaça e sprinkler sem bloqueio." }
           ],
-          quote: "Em emergência: siga a brigada, não corra, não volte atrás, vá ao ponto de encontro.",
-          transcript: "Combate a incêndio, proibição de obstrução e protocolo de evacuação."
+          quote: "Equipamento de combate obstruído não protege ninguém.",
+          transcript: "Equipamentos de combate a incêndio. Manter desobstruídos saídas de emergência, extintores, hidrantes, detectores de fumaça e sprinklers."
+        },
+        {
+          id: "m2-evacuacao",
+          type: "video",
+          kicker: "🎥 Vídeo",
+          title: "Como Agir em Caso de Emergência e Evacuação",
+          playerId: "panda-3ff61cef-a823-4077-8606-4bc6bc851894",
+          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=3ff61cef-a823-4077-8606-4bc6bc851894",
+          transcript: "Vídeo. Como agir em caso de emergência e evacuação. Assista ao vídeo. Avance quando concluir."
         },
         {
           id: "m2-saude",
+          type: "video",
+          kicker: "🎥 Vídeo",
+          title: "Programas de Saúde do SESMT, PCMSO e Ficha de Produtos Químicos (FDS)",
+          playerId: "panda-feb0c481-7c3d-451f-a397-eb736bd672c9",
+          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=feb0c481-7c3d-451f-a397-eb736bd672c9",
+          transcript: "Vídeo. Programas de saúde do SESMT, PCMSO e ficha de produtos químicos FDS. Assista ao vídeo. Avance quando concluir."
+        },
+        {
+          id: "m2-vivabem",
+          type: "video",
+          kicker: "🎥 Vídeo",
+          title: "Suporte Pessoal: Programa Viva Bem e Central de Saúde",
+          playerId: "panda-38ef477b-7796-4958-8f99-603453071f92",
+          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=38ef477b-7796-4958-8f99-603453071f92",
+          transcript: "Vídeo. Suporte pessoal: programa Viva Bem e Central de Saúde. Assista ao vídeo. Avance quando concluir."
+        },
+        {
+          id: "m2-campanhas",
           type: "content",
-          kicker: "📄 SESMT e PCMSO",
-          title: "Saúde ocupacional e Viva Bem",
-          body: "O SESMT cuida da saúde no trabalho. O Viva Bem cuida da vida fora da tarefa.",
+          fit: true,
+          kicker: "📄 Saúde e bem-estar",
+          title: "Campanhas de saúde da Leroy Merlin",
+          body: "A prevenção continua no cuidado com a sua saúde. O PCMSO acompanha a vida laboral — e os canais de apoio estão abertos o tempo todo.",
           cards: [
-            { icon: "🩺", title: "Exames do PCMSO", body: "Admissional, periódico, retorno ao trabalho, mudança de risco e demissional, in company." },
-            { icon: "💉", title: "Vacinação", body: "Campanha anual de gripe." },
-            { icon: "📞", title: "Viva Bem (Auster)", body: "0800 770 2324 — 24 horas, gratuito e confidencial." },
-            { icon: "🧘", title: "Apoio e ergonomia", body: "Psicologia, jurídico, financeiro, nutrição, fisioterapia, serviço social, pedagogia, pet e ginástica laboral." }
+            { icon: "🩺", title: "PCMSO", body: "Admissional, periódicos in company, retorno ao trabalho, mudança de risco, demissional e consultas assistenciais." },
+            { icon: "💉", title: "Vacinação", body: "Campanha anual de vacinação contra a gripe." },
+            { icon: "📋", title: "FDS", body: "Tintas, colas, adesivos ou solventes: consulte a FDS antes de iniciar a atividade." },
+            { icon: "💚", title: "Viva Bem (Auster)", body: "Gratuito, confidencial e 24 horas: 0800 770 2324." },
+            { icon: "🤝", title: "Orientação profissional", body: "Psicologia, jurídico, financeiro, nutrição, fisioterapia, serviço social e consultoria pet." },
+            { icon: "🏥", title: "Central de Saúde (D'Or)", body: "0800 940 1265 — aconselhamento médico, plano de saúde e Amor de Mãe até o 3º mês do bebê." }
           ],
-          quote: "Ergonomia organizacional e cognitiva, mais ginástica laboral no dia a dia.",
-          transcript: "PCMSO, vacinação, Viva Bem 0800 770 2324 e ergonomia."
+          quote: "Você não está sozinho.",
+          transcript: "Campanhas de saúde. P C M S O com exames admissional, periódicos in company, retorno, mudança de risco e demissional. Vacinação anual contra a gripe. F D S para produtos químicos. Viva Bem Auster, 0800 770 2324, 24 horas. Central de Saúde D Or, 0800 940 1265, e programa Amor de Mãe."
+        },
+        {
+          id: "m2-ergonomia",
+          type: "video",
+          kicker: "🎥 Vídeo",
+          title: "Ergonomia e Ginástica Laboral",
+          playerId: "panda-82a0d841-e7cb-43d6-b3c6-65f6fc98dd89",
+          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=82a0d841-e7cb-43d6-b3c6-65f6fc98dd89",
+          transcript: "Vídeo. Ergonomia e ginástica laboral. Assista ao vídeo. Avance quando concluir."
         },
         {
           id: "m2-desafio",
           type: "quiz-intro",
-          title: "Missão: Monte o fluxo",
-          count: 1,
-          minCorrect: 1,
-          icon: "📣",
-          body: "Toque os <strong>4 passos</strong> na ordem certa: do aviso até o registro no Moki. Se errar, pode tentar de novo.",
-          transcript: "Missão monte o fluxo. Toque os quatro passos na ordem certa. Se errar, pode tentar de novo."
+          title: "Missão: Faça ou nunca",
+          count: 5,
+          minCorrect: 4,
+          icon: "🚨",
+          body: "Você está no plantão. São <strong>5 cenas</strong> dos vídeos deste módulo. Toque em <strong>Faça</strong> ou <strong>Nunca</strong>. Acerte no mínimo <strong>4</strong> para avançar.",
+          transcript: "Missão faça ou nunca. São cinco cenas. Toque em faça ou nunca. Acerte no mínimo quatro para avançar."
         },
         {
           id: "m2-jogo",
-          type: "order",
-          title: "Monte o fluxo do acidente",
-          body: "Toque na ordem: quem avisa, quem assume, quem classifica e onde registra.",
-          minCorrect: 1,
-          review: "O fluxo oficial: colaborador, gestor, diretor ou SESMT, e registro no Moki",
+          type: "sort",
+          title: "Faça ou nunca?",
+          body: "Pense rápido. É o dia a dia da loja, do depósito e do cuidado com você.",
+          left: { id: "nok", label: "Nunca", icon: "✕" },
+          right: { id: "ok", label: "Faça", icon: "✓" },
+          minCorrect: 4,
+          time: 40,
+          review: "Fluxo no Moki, casos reais, equipamentos de incêndio, evacuação e Viva Bem",
           items: [
-            { key: "aviso", rank: 1, text: "O colaborador acidentado avisa na hora" },
-            { key: "gestor", rank: 2, text: "O gestor imediato assume o chamado" },
-            { key: "sesmt", rank: 3, text: "O diretor ou o SESMT classifica a ocorrência" },
-            { key: "moki", rank: 4, text: "A ocorrência é registrada no Moki" }
+            { text: "Sofreu ou presenciou acidente material, incidente, ASA, ACA, trajeto ou ocorrência com cliente? Comunicar na hora o gestor imediato ou o gerente de plantão.", bin: "ok", hint: "O fluxo é imediato: colaborador → gestor → diretor ou SESMT. Tudo entra no Moki." },
+            { text: "Empilhar 9 chapas de MDF na vertical no linear — 459 kg — para a cliente ver o produto.", bin: "nok", hint: "Esse caso real causou prensamento e lesão no tórax. Chapas só na horizontal." },
+            { text: "Deixar palete, caixa ou mercadoria na frente de extintor, hidrante, sprinkler, detector ou saída de emergência.", bin: "nok", hint: "Acesso livre 100% do tempo. Em emergência, conte também com a Segurança Patrimonial." },
+            { text: "O alarme tocou: seguir o brigadista de capacete vermelho e ir ao ponto de encontro, caminhando com calma.", bin: "ok", hint: "Os 4 passos: saídas, brigadistas, instruções da brigada, ponto de encontro. Nunca corra." },
+            { text: "Precisa de apoio? Ligar no Viva Bem 0800 770 2324 — gratuito, confidencial e 24 horas.", bin: "ok", hint: "Central de Saúde D'Or: 0800 940 1265. Você não está sozinho." }
           ],
-          transcript: "Jogo. Toque os quatro passos na ordem do fluxo."
+          transcript: "Jogo. Classifique cada cena como faça ou nunca."
         }
       ]
     },
@@ -435,34 +462,22 @@ window.QUESTION_SCREEN_SESSION = {
           transcript: "Módulo 4: equipamentos móveis motorizados, racks, escadas e isolamento."
         },
         {
-          id: "m4-escadas",
-          type: "content",
-          kicker: "📄 Escadas",
+          id: "m4-v-escadas",
+          type: "video",
+          kicker: "🎥 Vídeo",
           title: "Uso seguro de escadas",
-          body: "A inspeção vem antes do primeiro degrau.",
-          cards: [
-            { icon: "🔎", title: "Checklist", body: "Degraus, roldanas, corrimão, guarda-corpo e pés." },
-            { icon: "👤", title: "De frente", body: "Subir e descer sempre de frente para a escada, usando o corrimão." },
-            { icon: "📱", title: "Celular", body: "Proibição absoluta de usar o celular na escada." },
-            { icon: "🚫", title: "Não use", body: "Escada folgada, pé quebrado ou corrimão solto sai de operação." }
-          ],
-          quote: "Corrimão na mão. Celular no bolso. Frente para a escada.",
-          transcript: "Inspeção de escadas, subida de frente e proibição de celular."
+          playerId: "panda-08c72f18-4f8b-4db7-9130-786077a97ce7",
+          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=08c72f18-4f8b-4db7-9130-786077a97ce7",
+          transcript: "Vídeo. Uso seguro de escadas. Assista ao vídeo. Avance quando concluir."
         },
         {
-          id: "m4-racks",
-          type: "content",
-          kicker: "📄 Estruturas",
-          title: "Racks: nem pensar",
-          body: "Colaborador não autorizado não monta, não desmonta e não altera porta-paletes.",
-          cards: [
-            { icon: "🚫", title: "Regra rígida", body: "Racks: nem pensar. Nenhuma adaptação caseira." },
-            { icon: "🏢", title: "Quem mexe", body: "Somente empresa homologada." },
-            { icon: "🎫", title: "ServiceNow", body: "Abra o chamado pelo Guia ADEO." },
-            { icon: "📣", title: "Viu dano", body: "Isole, avise e registre. Não tente consertar." }
-          ],
-          quote: "Rack danificado ou alterado é condição insegura grave.",
-          transcript: "Racks: proibido montar, desmontar ou alterar. Chamado no ServiceNow."
+          id: "m4-v-racks",
+          type: "video",
+          kicker: "🎥 Vídeo",
+          title: "Estruturas de Armazenamento: A Regra para Racks e Porta-Paletes",
+          playerId: "panda-e083def5-d2cf-4bb7-b509-9feff68cd7fb",
+          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=e083def5-d2cf-4bb7-b509-9feff68cd7fb",
+          transcript: "Vídeo. Estruturas de armazenamento: a regra para racks e porta-paletes. Assista ao vídeo. Avance quando concluir."
         },
         {
           id: "m4-isolamento",
@@ -523,6 +538,9 @@ window.QUESTION_SCREEN_SESSION = {
         {
           id: "m4-p3",
           type: "question",
+          image: "assets/fotos/m4p2.png",
+          imagePosition: "center 28%",
+          imageAlt: "Isolamento físico com cones e fita na área da plataforma elevatória",
           question: "Quando o isolamento físico é obrigatório?",
           alternatives: [
             { id: "a", text: "Só depois que o acidente acontece", correct: false },
@@ -537,6 +555,9 @@ window.QUESTION_SCREEN_SESSION = {
         {
           id: "m4-p4",
           type: "question",
+          image: "assets/fotos/m4p3.png",
+          imagePosition: "center 22%",
+          imageAlt: "Operador com carteirinha, empilhadeira, paleteira e plataforma",
           question: "O que é obrigatório para operar empilhadeira, paleteira elétrica ou plataforma?",
           alternatives: [
             { id: "a", text: "Apenas a chave da máquina", correct: false },

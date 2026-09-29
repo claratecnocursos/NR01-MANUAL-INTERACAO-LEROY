@@ -6,7 +6,7 @@
   <meta name="referrer" content="no-referrer">
   <title>NR-01 — Manual de Integração e Segurança do Trabalho</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="question-screen.css?v=leroy-green28">
+  <link rel="stylesheet" href="question-screen.css?v=leroy-green33">
   <style>
     html, body { margin: 0; height: 100%; overflow: hidden; }
   </style>
@@ -166,8 +166,8 @@
 
   <audio id="bg-music" loop preload="metadata" aria-hidden="true"></audio>
 
-  <script src="question-screen-data.js?v=nr01-26"></script>
-  <script src="question-screen.js?v=nr01-10"></script>
+  <script src="question-screen-data.js?v=nr01-46"></script>
+  <script src="question-screen.js?v=nr01-13"></script>
   <script src="audios/audio-manifest.js?v=nr01-1"></script>
   <script src="narration-text.js?v=nr01-2"></script>
   <script src="narration.js?v=nr01-1"></script>
@@ -590,7 +590,7 @@
 
   function canForward() {
     if (isFinale()) return false;
-    if (showingResult) return !!quizState.passed;
+    if (showingResult) return !!(quizState.passed || demoMode);
     var s = current();
     if (!s) return false;
     /* A ficha de alongamento trava a seta mesmo em simulação: o bloqueio
@@ -619,8 +619,8 @@
       btnFwd.disabled = true;
       return;
     }
-    btnBack.disabled = showingResult;
-    btnFwd.disabled = showingResult ? !quizState.passed : !canForward();
+    btnBack.disabled = showingResult && !!quizState.passed && !demoMode;
+    btnFwd.disabled = showingResult ? !(quizState.passed || demoMode) : !canForward();
   }
 
   // temas das questões erradas, para orientar o que estudar antes de tentar de novo
@@ -732,6 +732,11 @@
     var action = info && info.action;
     if (action === 'retry') {
       restartQuiz();
+      return;
+    }
+    if (action === 'back') {
+      showingResult = false;
+      mountSlide();
       return;
     }
     if (action === 'finish') {
@@ -1144,6 +1149,7 @@
     if (s.type === 'sort' && Array.isArray(s.items) && s.items.length) {
       quizState.total = s.items.length;
       if (s.minCorrect != null) quizState.minCorrect = Number(s.minCorrect);
+      quizState.mode = 'sort';
       quizState.active = true;
     }
     if (s.type === 'match' && Array.isArray(s.pairs) && s.pairs.length) {
@@ -1227,7 +1233,12 @@
     if (mode !== 'play') return;
     clearAutoAdvance();
     if (showingResult) {
-      if (delta > 0 && quizState.passed) finishAfterQuiz();
+      if (delta < 0) {
+        showingResult = false;
+        mountSlide();
+        return;
+      }
+      if (delta > 0 && (quizState.passed || demoMode)) finishAfterQuiz();
       return;
     }
     if (delta < 0 && slideIndex <= 0) {

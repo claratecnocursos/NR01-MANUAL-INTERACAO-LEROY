@@ -930,6 +930,10 @@
       ? (passed
         ? 'Você montou o fluxo na ordem certa.'
         : 'Toque os 4 passos na ordem: aviso, gestor, SESMT e Moki.')
+      : data.mode === 'sort'
+      ? (passed
+        ? ('Você acertou <strong>' + hits + '</strong> de <strong>' + total + '</strong> cenas.')
+        : ('Você acertou <strong>' + hits + '</strong> de <strong>' + total + '</strong>. É necessário acertar pelo menos <strong>' + min + '</strong>. Revise os vídeos e tente de novo.'))
       : (passed
         ? ('Você acertou <strong>' + hits + '</strong> de <strong>' + total + '</strong> questões.')
         : ('Você acertou <strong>' + hits + '</strong> de <strong>' + total + '</strong>. É necessário acertar pelo menos <strong>' + min + '</strong>. Estude e tente novamente.')));
@@ -1427,17 +1431,18 @@
     var start = e.target.closest('[data-qs-start]');
     var retry = e.target.closest('[data-qs-retry]');
     var finish = e.target.closest('[data-qs-finish]');
+    var back = e.target.closest('[data-qs-back]');
     if (opt && !this.state.answered) {
       beep('click');
       this.select(+opt.dataset.index);
       return;
     }
-    if (start || retry || finish) {
+    if (start || retry || finish || back) {
       beep('click');
       if (typeof this.options.onContinue === 'function') {
         this.options.onContinue({
           data: this.data,
-          action: start ? 'start' : (retry ? 'retry' : 'finish')
+          action: start ? 'start' : (retry ? 'retry' : (finish ? 'finish' : 'back'))
         });
       }
     }
